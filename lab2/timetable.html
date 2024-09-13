@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My School Schedule</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 90%;
+            margin: auto;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        td {
+            height: 80px;
+        }
+
+        /* Custom color for different subjects */
+        .subject1 { background-color: #ccffcc; } /* light green */
+        .subject2 { background-color: #ffcccc; } /* light red */
+        .subject3 { background-color: #e6ccff; } /* light purple */
+        .subject4 { background-color: #ffe6b3; } /* light orange */
+        .subject5 { background-color: #cce6ff; } /* light blue */
+        
+        /* Alignments for better cell layout */
+        td span {
+            display: block;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption><strong>My School Timetable</strong></caption>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>07:40 - 08:25</td>
+                <td rowspan="2">
+                    Academic english 3
+                </td>
+                <td rowspan="2">
+                </td>
+                <td rowspan="2">
+                </td>
+                <td rowspan="2">
+                </td>
+                <td rowspan="2">
+                </td>
+            </tr>
+            <tr>
+                <td>08:25 - 09:10</td>
+            </tr>
+            <tr>
+                <td>09:10 - 10:05</td>
+                <td rowspan="2">
+                    Academic english 3
+                </td>
+                <td rowspan="2">
+                    Ugugdul
+                </td>
+                <td rowspan="2">
+                    Shaardlaga
+                </td>
+                <td rowspan="2">
+                </td>
+                <td rowspan="2">
+                </td>
+            </tr>
+            <tr>
+                <td>10:05 - 10:50</td>
+            </tr>
+            <tr>
+                <td>11:00 - 11:45</td>
+                <td rowspan="2">
+                </td>
+                <td rowspan="2">
+                </td>
+                <td rowspan="2">
+                    Shaardlaga
+                </td>
+                <td rowspan="2">
+                </td>
+                <td rowspan="2">
+                </td>
+            </tr>
+            <tr>
+                <td>11:45 - 12:30</td>
+            </tr>
+            <tr>
+                <td>12:40 - 13:25</td>
+                <td></td>
+                <td></td>
+                <td rowspan="2">
+                    Obyekt
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>13:25 - 14:10</td>
+                <td></td>
+                <td rowspan="3">
+                    Ugugdul
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>14:20 - 15:05</td>
+                <td rowspan="2">
+                    paz
+                </td>
+                <td rowspan="2">
+                    diskret
+                </td>
+                <td rowspan="2">
+
+                </td>
+                <td rowspan="2">
+
+                </td>
+            </tr>
+            <tr>
+                <td>15:05 - 15:50</td>
+            </tr>
+            <tr>
+                <td>16:00 - 16:45</td>
+                <td rowspan="2"></td>
+                <td rowspan="2"></td>
+                <td rowspan="3">
+                    paz
+                </td>
+                <td rowspan="2">
+                    angli hel 3
+                </td>
+                <td rowspan="2">
+                    diskret
+                </td>
+            </tr>
+            <tr>
+                <td>16:45 - 17:30</td>
+            </tr>
+            <tr>
+                <td>17:40 - 18:25</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
