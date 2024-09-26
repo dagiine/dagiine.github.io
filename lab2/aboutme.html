@@ -1,52 +1,80 @@
 <!DOCTYPE html>
-<html>
 <head>
-    <title>Lab 2</title>
+    <title>About me</title>
     <style>
-        table {
-            width: 600px;
-            height: 300px;
+        body {
+            background-color: mistyrose;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-
-        th, td {
-            text-align: left;
+        table {
+            width: 100%;
+            height: 100vh;
+            border-spacing: 0;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+        .header {
+            background-color: palevioletred;
+            color: white;
+            font-size: 2em;
+        }
+        .nav {
+            background-color: lavenderblush;
             padding: 10px;
         }
-
-        img {
-            width: 200px;
-            height: 200px;
+        .nav a {
+            margin: 0 10px;
+            color: palevioletred;
+            text-decoration: none;
+        }
+        .content img {
+            width: 300px;
+            height: 300px;
         }
     </style>
 </head>
 <body>
-    <table border="1">
-        <caption><strong>About me</strong></caption>
-        <thead>
-            <tr>
-                <th><img src="flower.jpg" alt="my photo"></th>
-                <th>Hi</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><a href="./timetable.html">My school timetable</a></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><a href="./myfamily.html">My family</a></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><a href="./myhobby.html">My hobbies</a></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td><a href="./contactme.html">Contact me</a></td>
-                <td></td>
-            </tr>
-        </tbody>
+
+    <table>
+        <tr>
+            <td colspan="3" class="header">
+                About me
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" class="nav">
+                <a href="home.html">Back to home</a>
+                <a href="myfamily.html">My Family</a>
+                <a href="myhobby.html">My hobby</a>
+                <a href="contactme.html">Contact me</a>
+                <a href="/index.html">Буцах</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="content">
+                <img src="me.jpg" alt="bi">
+            </td>
+            <td class="content">
+                <img src="me_1.jpg" alt="bi1">
+            </td>
+            <td class="content">
+                <img src="me_2.jpg" alt="bi2">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <p>
+                    Намайг Дагиймаа гэдэг. 2006 оны 12 сарын 8-нд төрсөн. Оюутан. МУИС-д программ хангамжаар сурдаг. Амьтанд хайртай.<br>
+                    Тусдаа гарахаараа мууртай, нохойтой болно. Гэрийнхэн зөвшөөрдгүй болохоор одоо загас тэжээдэг. Тэгээд нилээн introvent.<br>
+                    Сайн мэдэхгүй хүнтэй ярихдаа тааруу. 
+                </p>
+            </td>
+        </tr>
     </table>
-    <h3><a href="../index.html">Back to home page</a></h3>
+
 </body>
 </html>
