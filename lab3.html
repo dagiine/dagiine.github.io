@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Facebook 2004</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: auto;
+            padding: 10px;
+        }
+
+        .container {
+            background-color: white;
+            border: 2px solid;
+            height: auto;
+        }
+
+        header {
+            background-color: midnightblue;
+            color: cornflowerblue;
+            padding: 10px;
+            font-size: 4em;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        nav {
+            background-color: midnightblue;
+            padding: 5px;
+            text-align: right;
+        }
+
+        nav a {
+            color: white;
+            margin-right: 15px;
+        }
+
+        main {
+            display: flex;
+            padding: 10px;
+        }
+
+        .sidebar {
+            width: 13%;
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        .overview {
+            font-weight: bold;
+            background-color: midnightblue;
+            color: white;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .picture-section {
+            padding: 10px;
+        }
+
+        .info-section {
+            flex: 1;
+            border: 2px solid;
+            padding: 10px;
+        }
+
+        .quick-search {
+            margin-bottom: 10px;
+            border: dotted;
+            padding: 10px;
+        }
+
+        .search-bar {
+            width: 100%;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 5px;
+        }
+
+        .search-bar button {
+            background-color: midnightblue;
+            color: white;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            border: dotted;
+            padding: 10px;
+        }
+
+        ul li {
+            padding: 2px;
+        }
+
+        ul li a {
+            color: midnightblue;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        h4 {
+            background-color: midnightblue;
+            color: white;
+            padding: 5px;
+            margin-top: 0;
+
+        }
+
+        table td {
+            padding: 5px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        article {
+            margin-left: 30px; 
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>[thefacebook]</header>
+
+        <nav aria-label="Main navigation">
+            <a href="#">home</a>
+            <a href="#">search</a>
+            <a href="#">global</a>
+            <a href="#">social net</a>
+            <a href="#">invite</a>
+            <a href="#">faq</a>
+            <a href="#">logout</a>
+        </nav>
+
+        <main>
+            <aside class="sidebar">
+                <div class="quick-search">
+                    <input type="search"> <br>
+                    <label>Quick search</label><input type="submit" value="Go">
+                </div>
+                <ul>
+                    <li><a href="#">My Profile</a></li>
+                    <li><a href="#">My Groups</a></li>
+                    <li><a href="#">My Friends</a></li>
+                    <li><a href="#">My Messages</a></li>
+                    <li><a href="#">My Away Message</a></li>
+                    <li><a href="#">My Mobile Info</a></li>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">My Privacy</a></li>
+                </ul>
+            </aside>
+
+            <section>
+                <table border="2" class="picture-section">
+                    <tr>
+                        <td>
+                            <h4>Picture</h4>
+                            <img src="profile.png" alt="Profile Picture">
+                        </td>
+                    </tr>
+                </table>                
+
+                <table border="2">
+                    <tr>
+                        <td>Visualize My Friends</td>
+                    </tr>
+                    <tr>
+                        <td>Edit My Profile</td>
+                    </tr>
+                    <tr>
+                        <td>My Account Preferences</td>
+                    </tr>
+                    <tr>
+                        <td>My Privacy Preferences</td>
+                    </tr>
+                </table>
+
+                <table border="2">
+                    <tr>
+                        <td>
+                            <h4>Connection</h4>
+                            <p>This is you.</p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table border="2">
+                    <tr>
+                        <td>
+                            <h4>Access</h4>
+                            <p>Scott is currently logged in from a non-residential location.</p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table border="2">
+                    <tr>
+                        <td>
+                            <h4>Other Schools</h4>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+
+            <article class="info-section">
+                <h4>Information</h4>
+                <table>
+                    <tr>
+                        <td style="font-weight: bold;">Account Info:</td>
+                    </tr>
+                    <tr>
+                        <td>Name:</td>
+                        <td>Dagiimaa Batjargal</td>
+                    </tr>
+                    <tr>
+                        <td>Member Since:</td>
+                        <td>March 12, 2014</td>
+                    </tr>
+                    <tr>
+                        <td>Last Update:</td>
+                        <td>July 23, 2024</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">Basic Info:</td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>dagiimaaba89@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td>Student</td>
+                    </tr>
+                    <tr>
+                        <td>Year:</td>
+                        <td>2006</td>
+                    </tr>
+                    <tr>
+                        <td>Concentration:</td>
+                        <td>Computing Sciences</td>
+                    </tr>
+                    <tr>
+                        <td>Phone:</td>
+                        <td>+976 95212589</td>
+                    </tr>
+                    <tr>
+                        <td>High School:</td>
+                        <td>BELAS</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: bold;">Extended Info:</td>
+                    </tr>
+                    <tr>
+                        <td>Screenname:</td>
+                        <td>Dagiine</td>
+                    </tr>
+                    <tr>
+                        <td>Looking For:</td>
+                        <td>Friendship, Random Play</td>
+                    </tr>
+                    <tr>
+                        <td>Interested In:</td>
+                        <td>Men</td>
+                    </tr>
+                    <tr>
+                        <td>Relationship Status:</td>
+                        <td>In a Relationship</td>
+                    </tr>
+                    <tr>
+                        <td>Political Views:</td>
+                        <td>Liberal</td>
+                    </tr>
+                    <tr>
+                        <td>Interests:</td>
+                        <td>Drinking, Football, Basketball, Tennis, staying out late</td>
+                    </tr>
+                </table>
+            </article>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header Section */
+.header {
+    background-color: #3e1f79;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.header .logo img {
+    width: 150px;
+    display: inline-block;
+}
+
+.main-heading {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+.sub-heading {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: #e91e63;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Content Section */
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 20px;
+}
+
+.main-section {
+    flex: 3;
+}
+
+.section-heading {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.video {
+    margin-top: 20px;
+}
+
+/* Sidebar Section */
+.sidebar {
+    flex: 1;
+    margin-left: 40px;
+}
+
+.messages {
+    margin-bottom: 20px;
+}
+
+.message-button {
+    background-color: #e91e63;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.welcome-box, .vote-box {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.welcome-box h3 {
+    margin-top: 0;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.send-button {
+    background-color: #e91e63;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.vote-box p {
+    margin-bottom: 10px;
+}
+
+.vote-button {
+    width: 48%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.vote-button.cool {
+    background-color: #e91e63;
+    color: white;
+}
+
+.vote-button.lame {
+    background-color: white;
+    color: #333;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #3e1f79;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.important-info {
+    background-color: #757575;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.footer-text {
+    margin: 0;
+}
