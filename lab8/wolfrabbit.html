@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>2</title>
+</head>
+<body>
+    <script>
+        var distance = parseInt(
+			window.prompt("Зай оруул (км):", 0)
+		);
+
+		if (isNaN(distance)) {
+            alert("Тоо оруул!");
+            distance = 0;
+        }
+
+        if (distance > 0) {
+            const relativeSpeed = 25 - 18;
+
+            const time = distance / relativeSpeed;
+            const min = Math.floor(time * 60);
+            const sec = Math.floor((time * 3600) % 60);
+
+            document.write("Чоно туулайг " + distance + " км зайд гүйцэх хугацаа: " + min + " минут " + sec + " секунд");
+        } else {
+            document.write("Зайг зөв оруулна уу.");
+        }
+    </script>
+
+    <footer style="text-align: center;">
+        <a href="./lab8.html">Бодлогонууд руу буцах</a>
+    </footer>
+</body>
+</html>

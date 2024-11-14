@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>4</title>
+</head>
+<body>
+    <script>
+        function gcd(a, b) {
+            while (b != 0) {
+                var temp = b;
+                b = a % b;
+                a = temp;
+            }
+            return a;
+        }
+
+        function lcm(a, b) {
+            return (a * b) / gcd(a, b);
+        }
+
+        let numbers = [];
+        for (let i = 0; i < 5; i++) {
+            let num = parseInt(prompt("Тоо оруул:"));
+            
+            if (isNaN(num)) {
+                alert("Тоо оруул!");
+                num = 0;
+            }
+            numbers.push(num);
+        }
+
+        let result = numbers.reduce(lcm);
+        document.write("5 тооны хамгийн бага ерөнхий хуваагдагч: " + result);
+    </script>
+
+	<footer style="text-align: center;">
+        <a href="./lab8.html">Бодлогонууд руу буцах</a>
+    </footer> 
+</body>
+</html>

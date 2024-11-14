@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>5</title>
+</head>
+<body>
+    <script>
+        var currentTime = new Date();
+        var num = parseInt(window.prompt("Тоо оруул:", 0));
+
+        if (isNaN(num)) {
+            alert("Тоо оруул!");
+            num = 0;
+        }
+
+        var currentHour = currentTime.getHours();
+
+        if (currentHour > 8 && currentHour < 20) {
+            num = num * num;
+            document.write("Өглөө ")
+        } else {
+            num = Math.sqrt(num);
+            document.write("Орой ")
+        }
+
+        document.write(num);
+    </script>
+	<footer style="text-align: center;">
+        <a href="./lab8.html">Бодлогонууд руу буцах</a>
+    </footer> 
+</body>
+</html>

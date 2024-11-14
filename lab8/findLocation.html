@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <title>3</title>
+</head>
+<body>
+    <script>
+        function findLocation(aptNumber) {
+            const floors = 9;
+            const buildings = 3;
+            const doors = 4;
+            const apartmentsPerEntrance = floors * doors;
+
+            const entrance = Math.ceil(aptNumber / apartmentsPerEntrance);
+            const floor = Math.ceil(((aptNumber - 1) % apartmentsPerEntrance + 1) / doors);
+            const door = ((aptNumber - 1) % doors) + 1;
+
+            return "Орц: " + entrance + ", Давхар: " + floor + ", Хаалга: " + door;
+        }
+
+        var num = parseInt(window.prompt("Хайх хаалганы дугаар оруул:", 0));
+
+        if (isNaN(num) || num <= 0) {
+            alert("Тоо оруул!");
+            document.write("Буруу оруулсан байна.");
+        } else {
+            document.write(findLocation(num));
+        }
+    </script>
+
+    <footer style="text-align: center;">
+        <a href="./lab8.html">Бодлогонууд руу буцах</a>
+    </footer> 
+</body>
+</html>

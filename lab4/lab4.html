@@ -1,54 +1,132 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>CV - Dagiimaa Batjargal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV with CSS</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="cv-header">
-        <img src="/id.jpg" alt="ID photo" class="profile-photo">
-        <section class="contact-info">
-            <h1>Dagiimaa Batjargal</h1>
-            <p>Student</p>
-            <p><strong>Phone:</strong> 95212589</p>
-            <p><strong>Email:</strong> <a href="mailto:23B1NUM1527@stud.num.edu.mn">23B1NUM1527@stud.num.edu.mn</a></p>
-            <p><strong>Facebook:</strong> <a href="https://www.facebook.com/ddd.ily/">Dagiine</a></p>
-        </section>
+    <header>
+        <img src="/usanhee.jpg" alt="Усан хээ" width="100%" height="100%">
     </header>
 
-    <main class="cv-container">
-        <section class="cv-section">
-            <h2>Summary</h2>
-            <p>A passionate and dedicated Software Engineering student at the National University of Mongolia. Interested in learning new technologies and contributing to innovative projects.</p>
-        </section>
+    <section class="head">
+        <h1>I'M DAGIIMAA BATJARGAL</h1>
+        <p>A student majoring in Software Engineering.</p>
+        <div class="head-buttons">
+            <a href="#about" class="button">About me</a>
+            <a href="#footer" class="button">Contact</a>
+        </div>
+    </section>
 
-        <section class="cv-section">
-            <h2>Education</h2>
-            <p><strong>Bachelor in Software Engineering (2023 - Present)</strong><br>National University of Mongolia</p>
-        </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Aspiring software engineer currently studying at the National University of Mongolia, 
+            with a strong foundation in programming and a passion for developing user-friendly applications.</p>
+    </section>
 
-        <section class="cv-section">
-            <h2>Languages</h2>
-            <ul>
-                <li>English</li>
-                <li>Japanese</li>
-                <li>German</li>
-            </ul>
-        </section>
+    <section class="about-container">
+        <aside class="about-left">
+            <section class="about-left-section">
+                <h2>Education:</h2>
+                <ul>
+                    <li>Bachelor in Software Engineering (2023 - present)</li>
+                </ul>
+            </section>
+    
+            <section class="about-left-section">
+                <h2>Work Experience:</h2>
+                <ul>
+                    <li>Homeschool Teacher (2 years)</li>
+                    <li>Volunteering at an Animal Shelter (1 year)</li>
+                </ul>
+            </section>
+    
+            <section class="about-left-section">
+                <h2>Certificate:</h2>
+                <ul>
+                    <li>Informational Technology Professional 2024</li>
+                </ul>
+            </section>
+        </aside>
 
-        <section class="cv-section">
-            <h2>Skills</h2>
-            <ul>
-                <li>Collaborating with peers on group projects</li>
-                <li>Creative problem-solving</li>
-                <li>Proficiency with Microsoft Office (Word, PowerPoint)</li>
-                <li>Quick learning of new technologies or tools</li>
-            </ul>
-        </section>
-    </main>
+        <article class="about-right">
+            <h3>My Skills</h3>
+            <section class="skills">
+                <article class="skill-item">
+                    <p>01</p>
+                    <h4>Programming Languages:</h4> 
+                    <h4>C, C++, Java, HTML (Beginner)</h4>
+                </article>
+                <article class="skill-item">
+                    <p>02</p>
+                    <h4>Problem Solving</h4>
+                </article>
+                <article class="skill-item">
+                    <p>03</p>
+                    <h4>Communication & Collaboration</h4>
+                </article>
+                <article class="skill-item">
+                    <p>04</p>
+                    <h4>Project Management</h4>
+                </article>
+                <article class="skill-item">
+                    <p>05</p>
+                    <h4>Learn things quickly and efficiently</h4>
+                </article>
+                <article class="skill-item">
+                    <p>06</p>
+                    <h4>Research</h4>
+                </article>
+            </section>
+        </article>
+    </section>
 
-    <footer class="cv-footer">
-        <h4><a href="index.html">Буцах</a></h4>
-    </footer>
+    <section class="articles-section">
+        <h1 class="section-title">My works</h1>
+        <section class="articles">
+            <article class="article-card">
+                <img src="/project.png" alt="Project Manager" class="article-image">
+                <h2 class="article-title">PMI: THE PROJECT MANAGEMENT CASE COMPETITION 2024</h2>
+                <p class="article-summary">Participated by Virtual Sign Language Interpreter project. </p>
+                <a href="#" class="view">View »</a>
+            </article>
+            <article class="article-card">
+                <img src="/internet.png" alt="Internet Technology" class="article-image">
+                <h2 class="article-title">FUNDAMENTALS OF INTERNET TECHNOLOGY</h2>
+                <p class="article-summary">Labs</p>
+                <a href="/index.html" class="view">View »</a>
+            </article>
+            <article class="article-card">
+                <img src="/work.png" alt="Working" class="article-image">
+                <h2 class="article-title">Өөр юм хийвэл нэмнэ ээ.</h2>
+                <p class="article-summary">Товч</p>
+                <a href="#" class="view">View »</a>
+            </article>
+        </section>
+    </section>
+
+    <footer class="footer" id="footer">
+        <section class="footer-content">
+            <h2>Get In Touch</h2>
+            <address class="contact-info">
+                <article class="contact-box">
+                    <h3>My Email</h3>
+                    <p><a href="mailto:dagiimaaba89@gmail.com">Send an Email</a></p>
+                </article>
+
+                <article class="social-box">
+                    <h3>Follow Me</h3>
+                    <nav class="social-icons">
+                        <a href="https://www.facebook.com/ddd.ily/" class="fab fa-facebook-f" aria-label="Facebook"></a>
+                        <a href="https://www.instagram.com/chihriindagina_/" class="fab fa-instagram" aria-label="Instagram"></a>
+                    </nav>
+                </article>
+            </address>
+        </section>
+    </footer>    
+
 </body>
 </html>
