@@ -13,7 +13,7 @@
 
             const entrance = Math.ceil(aptNumber / apartmentsPerBuilding);
             const floor = Math.ceil(((aptNumber - 1) % apartmentsPerBuilding + 1) / doors);
-            const door = aptNumber % doors;
+            const door = (aptNumber - 1) % doors + 1;
 
             return "Орц: " + entrance + ", Давхар: " + floor + ", Хаалга: " + door;
         }
