@@ -10,9 +10,9 @@
             const doors = 4;
             const apartmentsPerBuilding = floors * doors;
 
-            const entrance = (aptNumber + apartmentsPerBuilding - 1) / apartmentsPerBuilding;
-            const floor = (((aptNumber - 1) % apartmentsPerBuilding + 1) + doors - 1) / doors;
-            const door = ((aptNumber - 1) % doors) + 1;
+            const entrance = (aptNumber + apartmentsPerBuilding) / apartmentsPerBuilding;
+            const floor = (aptNumer  + doors) / doors;
+            const door = aptNumber % doors;
 
             return "Орц: " + entrance + ", Давхар: " + floor + ", Хаалга: " + door;
         }
