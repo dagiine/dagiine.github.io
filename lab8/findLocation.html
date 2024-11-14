@@ -8,10 +8,10 @@
             const floors = 9;
             const buildings = 3;
             const doors = 4;
-            const apartmentsPerEntrance = floors * doors;
+            const apartmentsPerBuilding = floors * doors;
 
-            const entrance = Math.ceil(aptNumber / apartmentsPerEntrance);
-            const floor = Math.ceil(((aptNumber - 1) % apartmentsPerEntrance + 1) / doors);
+            const entrance = (aptNumber + apartmentsPerBuilding - 1) / apartmentsPerBuilding;
+            const floor = (((aptNumber - 1) % apartmentsPerBuilding + 1) + doors - 1) / doors;
             const door = ((aptNumber - 1) % doors) + 1;
 
             return "Орц: " + entrance + ", Давхар: " + floor + ", Хаалга: " + door;
