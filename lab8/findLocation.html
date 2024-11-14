@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
     <title>3</title>
 </head>
@@ -10,10 +11,10 @@
             const doors = 4;
             const apartmentsPerBuilding = floors * doors;
 
-            const entrance = (aptNumber + apartmentsPerEntrance - 1) / apartmentsPerEntrance;
-            const floor = (((aptNumber - 1) % apartmentsPerEntrance + 1) + doors - 1) / doors;
-            const door = ((aptNumber - 1) % doors) + 1;
-            
+            const entrance = Math.ceil(aptNumber / apartmentsPerBuilding);
+            const floor = Math.ceil(((aptNumber - 1) % apartmentsPerBuilding + 1) / doors);
+            const door = (aptNumber - 1) % doors + 1;
+
             return "Орц: " + entrance + ", Давхар: " + floor + ", Хаалга: " + door;
         }
 
