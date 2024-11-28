@@ -12,7 +12,7 @@ body {
   max-width: 600px;
   text-align: center;
   padding: 20px;
-  background: #fff;
+  background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-top: 30px;
   border-radius: 10px;
@@ -58,10 +58,10 @@ header .beta {
 }
 
 .keyboard button {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #ddd;
   color: #333;
   font-size: 1.2rem;

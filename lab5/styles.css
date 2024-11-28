@@ -267,9 +267,6 @@ section.vote-buttons button {
   padding: 5px;
 }
 
-/* Responsive Styles using Media Queries */
-
-/* For small devices like phones */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -311,7 +308,6 @@ section.vote-buttons button {
   }
 }
 
-/* For extra small devices (portrait phones) */
 @media (max-width: 480px) {
   header h1 {
     font-size: 30px;
