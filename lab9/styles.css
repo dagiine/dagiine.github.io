@@ -49,15 +49,15 @@ main {
 
 @media (max-width: 768px) {
   header h1 {
-    font-size: 60px; 
+    font-size: 70px; 
   }
 
   .instructions p {
-    font-size: 15px;
+    font-size: 20px;
   }
 
   .play-button {
-    padding: 10px 25px;
-    font-size: 15px; 
+    padding: 15px 30px;
+    font-size: 20px; 
   }
 }

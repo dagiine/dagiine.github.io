@@ -94,17 +94,17 @@ body {
   }
 
   .keyboard button {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
   }
 
   .word-display {
-    font-size: 25px;
+    font-size: 30px;
   }
 
   .hint {
-    font-size: 18px;
+    font-size: 22px;
   }
 }
 
@@ -114,8 +114,16 @@ body {
   }
 
   .keyboard button {
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
+    width: 55px;
+    height: 55px;
+    font-size: 20px;
+  }
+
+  .word-display {
+    font-size: 35px;
+  }
+
+  .hint {
+    font-size: 24px;
   }
 }
