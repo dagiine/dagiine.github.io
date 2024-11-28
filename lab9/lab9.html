@@ -4,54 +4,17 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="container">
-    <header>
-      <h1>Hangman</h1>
-    </header>
-
-    <section class="game-area">
-      <figure class="hangman-drawing">
-        <svg id="hangman" height="250" width="150" aria-label="Hangman Drawing">
-          <!-- Base -->
-          <line x1="20" y1="200" x2="120" y2="200" stroke="black" stroke-width="5"/>
-          <!-- Pole -->
-          <line x1="50" y1="20" x2="50" y2="200" stroke="black" stroke-width="5"/>
-          <!-- Top -->
-          <line x1="50" y1="20" x2="100" y2="20" stroke="black" stroke-width="5"/>
-          <!-- Rope -->
-          <line x1="100" y1="20" x2="100" y2="50" stroke="black" stroke-width="5"/>
-          <!-- Head -->
-          <circle id="head" cx="100" cy="70" r="20" stroke="black" stroke-width="5" fill="none" style="display:none;"/>
-          <!-- Body -->
-          <line id="body" x1="100" y1="90" x2="100" y2="130" stroke="black" stroke-width="5" style="display:none;"/>
-          <!-- Arms -->
-          <line id="left-arm" x1="100" y1="110" x2="80" y2="130" stroke="black" stroke-width="5" style="display:none;"/>
-          <line id="right-arm" x1="100" y1="110" x2="120" y2="130" stroke="black" stroke-width="5" style="display:none;"/>
-          <!-- Legs -->
-          <line id="left-leg" x1="100" y1="130" x2="80" y2="150" stroke="black" stroke-width="5" style="display:none;"/>
-          <line id="right-leg" x1="100" y1="130" x2="120" y2="150" stroke="black" stroke-width="5" style="display:none;"/>
-        </svg>
-      </figure>
-
-      <article class="word-display" role="status" aria-live="polite">
-        <p id="word">_ _ _ _</p>
-      </article>
+  <header>
+      <h1>HANGMAN</h1>
+  </header>
+  
+  <main>
+    <section class="instructions">
+      <p>
+        Нуусан үгийг таах гэж оролдоорой. Танд тоглоом тоглох 6 амь байгаа.
+      </p>
+      <a href="hangman.html"><button class="play-button">Play</button></a>
     </section>
-
-    
-    <section class="hint">
-      <p>💡 Hint: Animal with 4 legs</p>
-    </section>
-
-    <section class="keyboard" id="keyboard" role="region" aria-labelledby="keyboard-title">
-      <h2 id="keyboard-title" class="sr-only">Letter Keyboard</h2>
-    </section>
-
-    <footer>
-      <p>⚡ Developed by You</p>
-    </footer>
   </main>
-
-  <script src="script.js"></script>
 </body>
 </html>

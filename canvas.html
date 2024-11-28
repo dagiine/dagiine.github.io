@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+  <title>Draw on Canvas</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    let coord = { x: 0, y: 0 };
+
+    document.addEventListener("mousedown", start);
+    document.addEventListener("mouseup", stop);
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    function reposition(event) {
+      coord.x = event.clientX;
+      coord.y = event.clientY;
+    }
+
+    function start(event) {
+      document.addEventListener("mousemove", draw);
+      reposition(event);
+    }
+
+    function stop() {
+      document.removeEventListener("mousemove", draw);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    function draw(event) {
+      ctx.beginPath();
+      ctx.strokeStyle = "black";
+      ctx.moveTo(coord.x, coord.y);
+      reposition(event);
+      ctx.lineTo(coord.x, coord.y);
+      ctx.stroke();
+    }
+  </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-const words = ["cat", "elephant", "giraffe", "frog", "rabbit"];
+const words = ["cat", "elephant", "giraffe", "frog", "rabbit", "horse", "zebra"];
 let word = words[Math.floor(Math.random() * words.length)];
 let guessedWord = Array(word.length).fill("_");
 let wrongGuesses = 0;
@@ -20,55 +20,57 @@ function updateWordDisplay() {
 }
 
 function handleGuess(letter) {
+  const button = document.getElementById(letter.toUpperCase());
+
+  if (button.disabled) return; 
+
+  button.disabled = true;
+
   if (word.includes(letter)) {
     for (let i = 0; i < word.length; i++) {
-      if (word[i] === letter) {
-        guessedWord[i] = letter;
-      }
+      if (word[i] === letter) guessedWord[i] = letter;
     }
     updateWordDisplay();
-    checkWin();
+    button.classList.add("correct");
+
+    if (!guessedWord.includes("_")) {
+      setTimeout(() => {
+        alert(`Баяр хүргэе! Нууц үгийг зөв таалаа. 🎉`);
+        resetGame();
+      }, 500);
+    }
   } else {
     wrongGuesses++;
     drawHangman(wrongGuesses);
-    if (wrongGuesses === 6) {
-      alert(`Game Over! The word was "${word}".`);
-      resetGame();
-    }
-  }
-  document.getElementById(letter).disabled = true;
-  document.getElementById(letter).classList.add(word.includes(letter) ? "correct" : "wrong");
-}
+    button.classList.add("wrong");
 
-function checkWin() {
-  if (!guessedWord.includes("_")) {
-    alert("Congratulations! You guessed the word!");
-    resetGame();
+    if (wrongGuesses === 6) {
+      setTimeout(() => {
+        alert(`Тоглоом дууслаа! Нууц үг "${word}" байлаа. 😢`);
+        resetGame();
+      }, 500);
+    }
   }
 }
 
 function drawHangman(guesses) {
-  switch (guesses) {
-    case 1: hangmanParts.head.style.display = "block"; break;
-    case 2: hangmanParts.body.style.display = "block"; break;
-    case 3: hangmanParts.leftArm.style.display = "block"; break;
-    case 4: hangmanParts.rightArm.style.display = "block"; break;
-    case 5: hangmanParts.leftLeg.style.display = "block"; break;
-    case 6: hangmanParts.rightLeg.style.display = "block"; break;
-  }
+  const parts = ["head", "body", "leftArm", "rightArm", "leftLeg", "rightLeg"];
+  hangmanParts[parts[guesses - 1]].style.display = "block";
 }
 
 function resetGame() {
   word = words[Math.floor(Math.random() * words.length)];
   guessedWord = Array(word.length).fill("_");
   wrongGuesses = 0;
-  wordDisplay.textContent = guessedWord.join(" ");
+  updateWordDisplay();
+
   const buttons = document.querySelectorAll("#keyboard button");
   buttons.forEach(button => {
     button.disabled = false;
     button.classList.remove("correct", "wrong");
   });
-  Object.values(hangmanParts).forEach(part => part.style.display = "none");
+
+  Object.values(hangmanParts).forEach(part => (part.style.display = "none"));
 }
 
 function createKeyboard() {

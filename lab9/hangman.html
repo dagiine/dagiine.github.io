@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hangman Game</title>
+  <link rel="stylesheet" href="hangman_styles.css">
+</head>
+<body>
+  <main class="container">
+    <section class="game-area">
+      <figure class="hangman-drawing">
+        <svg id="hangman" height="250" width="150" aria-label="Hangman Drawing">
+          <!-- Base -->
+          <line x1="20" y1="200" x2="120" y2="200" stroke="white" stroke-width="5"/>
+          <line x1="50" y1="20" x2="50" y2="200" stroke="white" stroke-width="5"/>
+          <line x1="50" y1="20" x2="100" y2="20" stroke="white" stroke-width="5"/>
+          <line x1="100" y1="20" x2="100" y2="50" stroke="white" stroke-width="5"/>
+          <circle id="head" cx="100" cy="70" r="20" stroke="white" stroke-width="5" fill="none" style="display:none;"/>
+          <line id="body" x1="100" y1="90" x2="100" y2="130" stroke="white" stroke-width="5" style="display:none;"/>
+          <line id="left-arm" x1="100" y1="110" x2="80" y2="130" stroke="white" stroke-width="5" style="display:none;"/>
+          <line id="right-arm" x1="100" y1="110" x2="120" y2="130" stroke="white" stroke-width="5" style="display:none;"/>
+          <line id="left-leg" x1="100" y1="130" x2="80" y2="150" stroke="white" stroke-width="5" style="display:none;"/>
+          <line id="right-leg" x1="100" y1="130" x2="120" y2="150" stroke="white" stroke-width="5" style="display:none;"/>
+        </svg>
+      </figure>
+
+      <article class="word-display" role="status" aria-live="polite">
+        <p id="word">_ _ _ _</p>
+      </article>
+    </section>
+
+    <section class="hint">
+      <p>💡 Hint: 4 хөлтэй амьтан</p>
+    </section>
+
+    <section class="keyboard" id="keyboard" role="region" aria-labelledby="keyboard-title">
+      <h2 id="keyboard-title" class="sr-only">Letter Keyboard</h2>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
