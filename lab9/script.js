@@ -1,96 +1,86 @@
-const words = ["JAVASCRIPT", "SOFTWARE", "HTML", "INTERNET", "DEVELOPER"];
-let word = getRandomWord();
+const words = ["cat", "elephant", "giraffe", "frog", "rabbit"];
+let word = words[Math.floor(Math.random() * words.length)];
 let guessedWord = Array(word.length).fill("_");
 let wrongGuesses = 0;
-const maxGuesses = 6;
 
-const wordDisplay = document.getElementById("wordDisplay");
-const letterInput = document.getElementById("letterInput");
-const guessButton = document.getElementById("guessButton");
-const message = document.getElementById("message");
-const canvas = document.getElementById("hangmanCanvas");
-const ctx = canvas.getContext("2d");
-const resetButton = document.getElementById("resetButton");
+const wordDisplay = document.getElementById("word");
+const keyboard = document.getElementById("keyboard");
 
-// Draw the gallows and the initial hangman structure
-function drawGallows() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.lineWidth = 3;
-  ctx.strokeStyle = "#333";
-  
-  // Draw the gallows
-  ctx.strokeRect(50, 250, 200, 10); // Base
-  ctx.strokeRect(100, 50, 10, 200); // Vertical pole
-  ctx.strokeRect(100, 50, 100, 10); // Top beam
-  ctx.strokeRect(180, 50, 10, 50);  // Rope
-}
+const hangmanParts = {
+  head: document.getElementById("head"),
+  body: document.getElementById("body"),
+  leftArm: document.getElementById("left-arm"),
+  rightArm: document.getElementById("right-arm"),
+  leftLeg: document.getElementById("left-leg"),
+  rightLeg: document.getElementById("right-leg"),
+};
 
-// Draw the hangman figure (body parts added step by step)
-function drawHangman(wrongGuesses) {
-  // Head
-  if (wrongGuesses >= 1) ctx.beginPath(), ctx.arc(185, 120, 25, 0, Math.PI * 2), ctx.stroke(); // Head
-  // Body
-  if (wrongGuesses >= 2) ctx.moveTo(185, 145), ctx.lineTo(185, 175), ctx.stroke(); // Body
-  // Arms
-  if (wrongGuesses >= 3) {
-    ctx.moveTo(185, 150), ctx.lineTo(150, 180), ctx.stroke(); // Left arm
-    ctx.moveTo(185, 150), ctx.lineTo(220, 180), ctx.stroke(); // Right arm
-  }
-  // Legs
-  if (wrongGuesses >= 4) {
-    ctx.moveTo(185, 175), ctx.lineTo(150, 210), ctx.stroke(); // Left leg
-    ctx.moveTo(185, 175), ctx.lineTo(220, 210), ctx.stroke(); // Right leg
-  }
-}
-
-// Update the word display
 function updateWordDisplay() {
   wordDisplay.textContent = guessedWord.join(" ");
 }
 
-// Handle the guess
-guessButton.addEventListener("click", () => {
-  const letter = letterInput.value.toUpperCase();
-  letterInput.value = "";
-
-  if (!letter || letter.length > 1) {
-    message.textContent = "Please enter a single letter!";
-    return;
-  }
-
-  if (guessedWord.includes(letter) || wrongGuesses >= maxGuesses) return;
-
+function handleGuess(letter) {
   if (word.includes(letter)) {
-    word.split("").forEach((char, index) => {
-      if (char === letter) guessedWord[index] = letter;
-    });
+    for (let i = 0; i < word.length; i++) {
+      if (word[i] === letter) {
+        guessedWord[i] = letter;
+      }
+    }
     updateWordDisplay();
-    message.textContent = guessedWord.join("") === word ? "Congratulations! You guessed the word!" : "";
+    checkWin();
   } else {
     wrongGuesses++;
     drawHangman(wrongGuesses);
-    if (wrongGuesses === maxGuesses) message.textContent = "Game over! The word was: " + word;
+    if (wrongGuesses === 6) {
+      alert(`Game Over! The word was "${word}".`);
+      resetGame();
+    }
   }
-});
-
-// Reset the game
-resetButton.addEventListener("click", () => {
-  word = getRandomWord();
-  guessedWord = Array(word.length).fill("_");
-  wrongGuesses = 0;
-  message.textContent = "";
-  updateWordDisplay();
-  drawHangman(wrongGuesses);
-  resetButton.style.display = "none";
-  guessButton.style.display = "inline-block";
-  letterInput.disabled = false;
-});
-
-// Get a random word from the list
-function getRandomWord() {
-  return words[Math.floor(Math.random() * words.length)];
+  document.getElementById(letter).disabled = true;
+  document.getElementById(letter).classList.add(word.includes(letter) ? "correct" : "wrong");
 }
 
-// Initialize the game
+function checkWin() {
+  if (!guessedWord.includes("_")) {
+    alert("Congratulations! You guessed the word!");
+    resetGame();
+  }
+}
+
+function drawHangman(guesses) {
+  switch (guesses) {
+    case 1: hangmanParts.head.style.display = "block"; break;
+    case 2: hangmanParts.body.style.display = "block"; break;
+    case 3: hangmanParts.leftArm.style.display = "block"; break;
+    case 4: hangmanParts.rightArm.style.display = "block"; break;
+    case 5: hangmanParts.leftLeg.style.display = "block"; break;
+    case 6: hangmanParts.rightLeg.style.display = "block"; break;
+  }
+}
+
+function resetGame() {
+  word = words[Math.floor(Math.random() * words.length)];
+  guessedWord = Array(word.length).fill("_");
+  wrongGuesses = 0;
+  wordDisplay.textContent = guessedWord.join(" ");
+  const buttons = document.querySelectorAll("#keyboard button");
+  buttons.forEach(button => {
+    button.disabled = false;
+    button.classList.remove("correct", "wrong");
+  });
+  Object.values(hangmanParts).forEach(part => part.style.display = "none");
+}
+
+function createKeyboard() {
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  alphabet.forEach(letter => {
+    const button = document.createElement("button");
+    button.textContent = letter;
+    button.id = letter;
+    button.onclick = () => handleGuess(letter.toLowerCase());
+    keyboard.appendChild(button);
+  });
+}
+
 updateWordDisplay();
-drawGallows();  // Draw the gallows initially
+createKeyboard();
