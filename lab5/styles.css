@@ -1,0 +1,349 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', regular;
+}
+
+header {
+  background-color: #13124f;
+  color: white;
+  margin-bottom: 50px;
+}
+
+nav {
+  background-color: #1b1b6c;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+nav img {
+  padding-left: 10px;
+  max-height: 50px;
+}
+
+nav span {
+  font-size: 15px;
+  margin-left: 10px;
+}
+
+header section {
+  padding: 50px 0px;
+}
+
+header h1 {
+  font-size: 60px;
+  margin-bottom: 5px;
+  font-weight: 400;
+  padding-left: 30px;
+}
+
+header p {
+  margin-top: 40px;
+  font-size: 20px;
+  margin-bottom: 25px;
+  font-weight: 300;
+  padding-left: 30px;
+}
+
+a.btn-learn-more {
+  background-color: #f61067;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 10px;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: 700;
+}
+
+footer p {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #13124f;
+  color: white;
+  padding-left: 20px;
+}
+
+main {
+  width: 100%;
+  padding: 16px;
+  background-color: white;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.left-section {
+  width: 70%;
+  margin-left: 10px;
+}
+
+.left-section article {
+  width: 100%;
+}
+
+.right-section {
+  width: 30%;
+  margin-right: 10px;
+}
+
+.message-box {
+  background-color: #13124f;
+  color: white;
+  padding: 15px;
+}
+
+.message-box p {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.message-box input {
+  margin-bottom: 10px;
+  background-color: #352ba5;
+  width: 100%;
+  color: white;
+  border-top: 2px solid #9090a5;
+  border-bottom: 2px solid #9090a5;
+}
+
+.message-box input:focus {
+  outline: none;
+}
+
+.btn-send {
+  background-color: #f61067;
+  color: white;
+  width: 100%;
+  padding: 5px;
+}
+
+small {
+  background-color: #352ba5;
+  color: white;
+  padding: 5px;
+  width: 100%;
+  text-align: center;
+  font-size: 5px;
+  font-weight: 600;
+}
+
+small a {
+  text-decoration: none;
+  color: white;
+}
+
+.important {
+  background-color: #9090a5;
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+section.vote-section {
+  background: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #9090a5;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+progress {
+  width: 100%;
+  height: 10px;
+  margin: 0px;
+  border: none;
+}
+
+progress::-webkit-progress-bar {
+  background: #2ad392;
+}
+
+progress::-webkit-progress-value {
+  background: #f61067;
+}
+
+section.vote-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+section.vote-buttons button {
+  flex: 1;
+  margin: 5px;
+  padding: 5px;
+}
+
+section.vote-buttons .btn-cool {
+  background-color: #f61067;
+  border-color: #f61067;
+  color: white;
+}
+
+section.vote-buttons .btn-lame {
+  border-color: #2ad392;
+  background-color: white;
+  color: #2ad392;
+}
+
+article h1 {
+  font-family: 'Lato', bold;
+  font-weight: 500;
+  font-size: 35px;
+  margin-bottom: 16px;
+}
+
+article p {
+  font-family: 'Lato', bold;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-top: 20px;
+  margin-bottom: 35px;
+}
+
+figure {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+figure iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+section.messages {
+  text-align: center;
+  background: #f61067;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+section.messages span {
+  background: #352ba5;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+.message-box small {
+  width: 100%;
+}
+
+article p i {
+  font-style: italic;
+}
+
+section.vote-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  width: 100%;
+}
+
+section.vote-buttons button {
+  flex: 1;
+  margin: 5px;
+  padding: 5px;
+}
+
+/* Responsive Styles using Media Queries */
+
+/* For small devices like phones */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    margin: 0;
+  }
+
+  header h1 {
+    font-size: 40px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+  a.btn-learn-more {
+    font-size: 12px;
+  }
+
+  .left-section article p {
+    font-size: 14px;
+  }
+
+  section.vote-buttons {
+    flex-direction: column;
+  }
+
+  section.vote-buttons button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  figure {
+    padding-bottom: 75%;
+  }
+}
+
+/* For extra small devices (portrait phones) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 30px;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  .message-box input {
+    font-size: 14px;
+  }
+
+  a.btn-learn-more {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  section.messages {
+    font-size: 10px;
+  }
+
+  .vote-section {
+    font-size: 14px;
+  }
+
+  section.vote-buttons {
+    flex-direction: column;
+  }
+
+  section.vote-buttons button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
