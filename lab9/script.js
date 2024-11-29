@@ -5,15 +5,7 @@ let wrongGuesses = 0;
 
 const wordDisplay = document.getElementById("word");
 const keyboard = document.getElementById("keyboard");
-
-const hangmanParts = {
-  head: document.getElementById("head"),
-  body: document.getElementById("body"),
-  leftArm: document.getElementById("left-arm"),
-  rightArm: document.getElementById("right-arm"),
-  leftLeg: document.getElementById("left-leg"),
-  rightLeg: document.getElementById("right-leg"),
-};
+const body = document.body; 
 
 function updateWordDisplay() {
   wordDisplay.textContent = guessedWord.join(" ");
@@ -22,7 +14,7 @@ function updateWordDisplay() {
 function handleGuess(letter) {
   const button = document.getElementById(letter.toUpperCase());
 
-  if (button.disabled) return; 
+  if (button.disabled) return;
 
   button.disabled = true;
 
@@ -30,7 +22,6 @@ function handleGuess(letter) {
     for (let i = 0; i < word.length; i++) {
       if (word[i].toLowerCase() === letter) guessedWord[i] = word[i];
     }
-  }  
     updateWordDisplay();
     button.classList.add("correct");
 
@@ -39,9 +30,10 @@ function handleGuess(letter) {
         alert(`Баяр хүргэе! Нуусан үгийг зөв таалаа. 🎉`);
         resetGame();
       }, 500);
-    } else {
+    }
+  } else {
     wrongGuesses++;
-    drawHangman(wrongGuesses);
+    updateBackground(wrongGuesses);
     button.classList.add("wrong");
 
     if (wrongGuesses === 6) {
@@ -53,9 +45,10 @@ function handleGuess(letter) {
   }
 }
 
-function drawHangman(guesses) {
-  const parts = ["head", "body", "leftArm", "rightArm", "leftLeg", "rightLeg"];
-  hangmanParts[parts[guesses - 1]].style.display = "block";
+function updateBackground(guesses) {
+  if (guesses <= 6) {
+    body.style.backgroundImage = `url('cowboy_${guesses}.png')`;
+  }
 }
 
 function resetGame() {
@@ -70,7 +63,7 @@ function resetGame() {
     button.classList.remove("correct", "wrong");
   });
 
-  Object.values(hangmanParts).forEach(part => (part.style.display = "none"));
+  body.style.backgroundImage = `url('desert_hang.png')`;
 }
 
 function createKeyboard() {

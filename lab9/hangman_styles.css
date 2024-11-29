@@ -1,52 +1,48 @@
 body {
   margin: 0;
   font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
-  background-image: url('desert.jpg');
+  background-image: url('desert_hang.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  text-align: center;
 }
 
 .container {
-  width: 90%;
-  max-width: 600px;
-  color: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-}
-
-.hangman-drawing {
-  margin: 0 auto 20px;
-}
-
-.hangman-drawing svg {
   width: 100%;
+  max-width: 600px;
   height: auto;
-  max-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  gap: 20px;
 }
 
 .word-display {
   font-size: 30px;
-  margin: 20px 0;
+  margin: 0;
   word-spacing: 10px;
+  text-align: center;
 }
 
 .hint {
   font-size: 20px;
-  margin: 20px 0;
+  margin: 0;
+  text-align: center;
 }
 
 .keyboard {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .keyboard button {
@@ -75,7 +71,6 @@ body {
   background-color: red;
   color: white;
 }
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -88,42 +83,22 @@ body {
   overflow: hidden;
 }
 
-@media (max-width: 480px) {
-  .keyboard {
-    gap: 5px;
-  }
-
+@media (max-width: 768px) {
   .keyboard button {
-    width: 50px;
-    height: 50px;
-    font-size: 22px;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
   }
 
   .word-display {
-    font-size: 30px;
-  }
-
-  .hint {
-    font-size: 22px;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
-  .keyboard {
-    gap: 8px;
-  }
-
-  .keyboard button {
-    width: 55px;
-    height: 55px;
-    font-size: 20px;
-  }
-
-  .word-display {
-    font-size: 35px;
-  }
-
-  .hint {
     font-size: 24px;
+  }
+
+  .hint {
+    font-size: 18px;
+  }
+  
+  body {
+      background-position: left center;
   }
 }
