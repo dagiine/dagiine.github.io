@@ -83,7 +83,7 @@ body {
   overflow: hidden;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .keyboard button {
     width: 45px;
     height: 45px;

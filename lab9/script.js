@@ -1,4 +1,4 @@
-const words = ["муур", "заан", "арслан", "мэлхий", "туулай", "морь", "тэмээ"];
+const words = ["түүлай", "мэлхий", "ямаа", "үнэг", "баавгай", "арслан", "анааш", "тэмээ", "муур", "морь"];
 let word = words[Math.floor(Math.random() * words.length)];
 let guessedWord = Array(word.length).fill("_");
 let wrongGuesses = 0;
