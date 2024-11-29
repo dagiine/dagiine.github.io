@@ -1,4 +1,4 @@
-const words = ["cat", "elephant", "giraffe", "frog", "rabbit", "horse", "zebra"];
+const words = ["муур", "заан", "арслан", "мэлхий", "туулай", "морь", "тэмээ"];
 let word = words[Math.floor(Math.random() * words.length)];
 let guessedWord = Array(word.length).fill("_");
 let wrongGuesses = 0;
@@ -28,25 +28,25 @@ function handleGuess(letter) {
 
   if (word.includes(letter)) {
     for (let i = 0; i < word.length; i++) {
-      if (word[i] === letter) guessedWord[i] = letter;
+      if (word[i].toLowerCase() === letter) guessedWord[i] = word[i];
     }
+  }  
     updateWordDisplay();
     button.classList.add("correct");
 
     if (!guessedWord.includes("_")) {
       setTimeout(() => {
-        alert(`Баяр хүргэе! Нууц үгийг зөв таалаа. 🎉`);
+        alert(`Баяр хүргэе! Нуусан үгийг зөв таалаа. 🎉`);
         resetGame();
       }, 500);
-    }
-  } else {
+    } else {
     wrongGuesses++;
     drawHangman(wrongGuesses);
     button.classList.add("wrong");
 
     if (wrongGuesses === 6) {
       setTimeout(() => {
-        alert(`Тоглоом дууслаа! Нууц үг "${word}" байлаа. 😢`);
+        alert(`Тоглоом дууслаа! Нуусан үг "${word}" байлаа. 😢`);
         resetGame();
       }, 500);
     }
@@ -74,8 +74,8 @@ function resetGame() {
 }
 
 function createKeyboard() {
-  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-  alphabet.forEach(letter => {
+  const mongolianAlphabet = "АБВГДЕЁЖЗИЙКЛМНОӨПРСТУҮФХЦЧШЩЪЫЬЭЮЯ".split("");
+  mongolianAlphabet.forEach(letter => {
     const button = document.createElement("button");
     button.textContent = letter;
     button.id = letter;
