@@ -1,3 +1,4 @@
+/* Base styles */
 body {
   margin: 0;
   font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
@@ -47,21 +48,81 @@ main {
   color: black;
 }
 
+/* Responsive styles for medium screens */
 @media (max-width: 1200px) {
   header h1 {
-    font-size: 70px; 
+    font-size: 60px; 
   }
 
   .instructions p {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .play-button {
-    padding: 15px 30px;
-    font-size: 20px; 
+    padding: 12px 25px;
+    font-size: 18px; 
   }
 
   body {
     background-position: left center;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 50px;
+  }
+
+  .instructions p {
+    font-size: 16px;
+  }
+
+  .play-button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  body {
+    background-position: top center;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 40px;
+  }
+
+  .instructions p {
+    font-size: 14px;
+  }
+
+  .play-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  body {
+    flex-direction: column;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 1440px) {
+  header h1 {
+    font-size: 80px;
+  }
+
+  .instructions p {
+    font-size: 22px;
+  }
+
+  .play-button {
+    padding: 20px 40px;
+    font-size: 22px;
+  }
+
+  body {
+    background-position: center;
   }
 }
