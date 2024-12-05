@@ -1,21 +1,56 @@
 <!DOCTYPE html>
 <head>
-    <title>Random Generator</title>
+    <title>Robot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        section#robotImage {
+            margin-top: 20px;
+        }
+        img {
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1></h1>
-    </header>
-    <main>
+    <h1>Хэрвээ би робот байсан бол...</h1>
+    <p>Чамайг хэн гэдэг вэ?</p>
+    <input type="text" id="robotName" placeholder="Нэрээ оруул">
+    <button onclick="generateRobot()">Go</button>
 
-    </main>
+    <section id="robotImage"></section>
+
     <script>
-        fetch('https://dog.ceo/api/breeds/image/random')
-            .then(response => response.json()) 
-            .then(data => {
-        console.log(data.message);
-        })
-        .catch(error => console.error('Error:', error)); 
+        async function getData() {
+            const robotName = document.getElementById('robotName').value;
+            const url = `https://robohash.org/${robotName}.png`;
+            
+            try {
+                const response = await fetch(url);
+                if(!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+
+                const imgElement = document.createElement('img');
+                imgElement.src = url;
+                imgElement.alt = `Robot generated from ${robotName}`;
+
+                const robotImageContainer = document.getElementById('robotImage');
+                robotImageContainer.innerHTML = ''; 
+                robotImageContainer.appendChild(imgElement);
+            } catch (error) {
+                console.error(error.message);
+            }
+        }
+
+        function generateRobot() {
+            getData();
+        }
     </script>
+
 </body>
 </html>
