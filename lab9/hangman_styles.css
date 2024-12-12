@@ -1,77 +1,55 @@
-/* Base styles */  
-body {  
-  margin: 0;  
-  font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;  
-  background-image: url('desert_hang.png');  
-  background-size: cover;  
-  background-repeat: no-repeat;  
-  background-position: center;  
-  height: 100vh;  
-  display: flex;  
-  justify-content: flex-end;  
-  align-items: center;  
-}  
+body {
+  margin: 0;
+  font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+  background-image: url('desert_hang.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 
-.container {  
-  width: 100%;  
-  max-width: 600px;  
-  height: auto;  
-  display: flex;  
-  flex-direction: column;  
-  justify-content: center;  
-  align-items: center;  
-  padding: 20px;  
-  color: white;  
-  gap: 20px;  
-}  
+.container {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: white;
+  gap: 20px;
+}
 
-.word-display {  
-  font-size: 30px;  
-  margin: 0;  
-  word-spacing: 10px;  
-  text-align: center;  
-}  
+.word-display {
+  font-size: 30px;
+  margin: 0;
+  word-spacing: 10px;
+  text-align: center;
+}
 
-.hint {  
-  font-size: 20px;  
-  margin: 0;  
-  text-align: center;  
-}  
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
 
-.keyboard {  
-  display: flex;  
-  flex-wrap: wrap;  
-  gap: 10px;  
-  justify-content: center;  
-  align-items: center;  
-}  
-
-.keyboard button {  
-  width: 50px;  
-  height: 50px;  
-  border: none;  
-  border-radius: 5px;  
-  background-color: #783e0e;  
-  color: white;  
-  font-size: 20px;  
-  cursor: pointer;  
-  transition: 0.3s;  
-}  
-
-.keyboard button:hover {  
-  background-color: #eedc82;  
-  color: black;  
-}  
-
-.keyboard button.correct {  
-  background-color: green;  
-  color: white;  
-}  
-
-.keyboard button.wrong {  
-  background-color: red;  
-  color: white;  
-}  
+.keyboard button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: #783e0e;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
 .sr-only {  
   position: absolute;  
@@ -83,83 +61,33 @@ body {
   clip: rect(0, 0, 0, 0);  
   clip-path: inset(50%);  
   overflow: hidden;  
-}  
+}
 
-/* Medium screens */  
-@media (max-width: 1200px) {  
-  .keyboard button {  
-    width: 45px;  
-    height: 45px;  
-    font-size: 18px;  
-  }  
+.keyboard button:hover {
+  background-color: #eedc82;
+  color: black;
+}
 
-  .word-display {  
-    font-size: 24px;  
-  }  
+.keyboard button.correct {
+  background-color: green;
+  color: white;
+}
 
-  .hint {  
-    font-size: 18px;  
-  }  
+.keyboard button.wrong {
+  background-color: red;
+  color: white;
+}
 
-  body {  
-    background-position: left center;  
-  }  
-}  
+.man-image {
+  position: absolute;
+  width: 500px; 
+  height: auto; 
+  visibility: hidden;
+}
 
-@media (max-width: 768px) {  
-  .keyboard button {  
-    width: 40px;  
-    height: 40px;  
-    font-size: 16px;  
-  }  
-
-  .word-display {  
-    font-size: 22px;  
-  }  
-
-  .hint {  
-    font-size: 16px;  
-  }  
-
-  body {  
-    background-position: top center;  
-    flex-direction: column;  
-    padding: 10px;  
-  }  
-}  
-
-@media (max-width: 480px) {  
-  .keyboard button {  
-    width: 35px;  
-    height: 35px;  
-    font-size: 14px;  
-  }  
-
-  .word-display {  
-    font-size: 18px;  
-  }  
-
-  .hint {  
-    font-size: 14px;  
-  }  
-}  
-
-@media (min-width: 1440px) {  
-  .keyboard button {  
-    width: 60px;  
-    height: 60px;  
-    font-size: 22px;  
-  }  
-
-  .word-display {  
-    font-size: 36px;  
-  }  
-
-  .hint {  
-    font-size: 24px;  
-  }  
-
-  body {  
-    background-position: center;  
-  }  
-}  
+#man_1 { top: 200px; left: 180px; }
+#man_2 { top: 200px; left: 180px; }
+#man_3 { top: 200px; left: 180px; }
+#man_4 { top: 200px; left: 180px; }
+#man_5 { top: 200px; left: 180px; }
+#man_6 { top: 200px; left: 180px; }

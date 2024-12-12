@@ -1,0 +1,95 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    align-content: center;  
+    text-align: center;
+    padding: 10px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+nav img {
+    align-items: left;
+    justify-content: center;
+}
+
+nav {
+    background-color: white;
+    display: flex;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav ul {
+    text-align: center;
+    justify-content: center;
+    align-items: end;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    font-size: 14px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+form input {
+    padding: 5px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+form button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+ul.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+ul.icons li {
+    position: relative;
+    font-size: 0.9rem;
+}
+ul.icons li .notification {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: yellow;
+    color: black;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 5px;
+}
+
+section {
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f6f8;
+    font-size: 13px;
+}
