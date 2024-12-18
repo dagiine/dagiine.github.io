@@ -17,10 +17,7 @@ header {
 }
 
 header section {
-    display: flex;
-    margin: 5px 0;
-    justify-content: space-between;
-    align-items: center;
+    margin-left: 320px;
 }
 
 header img {
@@ -137,24 +134,24 @@ footer {
 
 @media (max-width: 768px) {
     header {
-        padding: 1.5rem;
+        padding: 24px;
     }
     
     header h1 {
-        font-size: 2rem;
+        font-size: 32px;
         text-align: center;
     }
     
     main {
-        padding: 1rem;
+        padding: 16px;
     }
     
     .blog-item {
-        padding: 1.5rem;
+        padding: 24px;
     }
     
     .blog-item h2 {
-        font-size: 1.5rem;
+        font-size: 24px;
     }
 
     nav ul {
