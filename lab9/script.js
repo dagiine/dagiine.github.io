@@ -32,7 +32,6 @@ function handleGuess(letter) {
     if (!guessedWord.includes("_")) {
       setTimeout(() => {
         alert("Баяр хүргэе! Нуусан үгийг зөв таалаа. 🎉");
-        resetGame();
       }, 500);
     }
   } else {
@@ -46,7 +45,6 @@ function handleGuess(letter) {
     if (wrongGuesses === 6) {
       setTimeout(() => {
         alert(`Тоглоом дууслаа! Нуусан үг "${word}" байлаа. 😢`);
-        resetGame(); 
       }, 500);
     }
   }

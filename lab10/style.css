@@ -1,115 +1,155 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
-* {
+body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    box-sizing: border-box;
-    border: none;
-    outline: none;
+    color: black;
 }
 
-body {
-    background-color:honeydew;
-    width: 100%;
-    height: 100vh;
+header, nav {
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+}
+
+header {
     display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd;
+}
+
+header section {
+    display: flex;
+    margin: 5px 0;
+}
+
+header img {
+    height: 60px;
+    margin-left: 315px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
+    border-bottom: 1px solid #ddd;
 }
 
-.container {
-    background-color: aliceblue;
-    transition: 1s ease;
-    width: 80%;
-    max-width: 40rem;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 1rem 1rem 10rem 2rem rgb(0 0 0 / 0.25);
-    padding: 2.5rem;
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
 }
 
-.question-card {
-    background-color: aquamarine;
-    border-radius: 1rem;
-    margin: 2rem auto;
-    padding: 2rem 0;
-    text-align: center;
+nav li {
+    margin-right: 20px;
 }
 
-.answer-card {
-    padding: 2rem 0 0;
-    display: flex;
-    flex-direction: column;
+nav a {
+    text-decoration: none;
+    color: black;
 }
 
-button {
+nav a:hover {
+    color: gray;
+}
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  
+  .blog-item {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
     transition: 0.3s;
-    cursor: pointer;
-    font-size: 1.5rem;
-    border-radius: 1rem;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.1);
-    margin: 0.5rem 0;
-    padding: 1rem 0;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .blog-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .blog-item h2 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: black;
+  }
+  
+  .blog-item .blog-date {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .blog-item .blog-summary {
+    color: #4a5568;
+    margin-bottom: 15px;
+    line-height: 1.7;
+  }
+  
+  .blog-item a {
+    color: #3a3f51;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: 500;
+  }
+  
+  .blog-item a:hover {
+    color: darkblue;
+  }
+  
+  .read-more {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #3a3f51;
+    color: white !important;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+  
+  .read-more:hover {
+    background-color: darkblue;
+    transform: translateY(-1px);
+  }  
+
+footer {
+  background-color: #3a3f51;
+  color: #aab0c0;
+  text-align: center;
+  padding: 3px;
+  width: 100%;
+  font-size: 15px;
 }
 
-button:hover {
-    background-color: rgba(0, 0, 0, 0.25);
-}
-
-.game-data {
-    margin: 1rem auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#start-game,
-#end-game {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    column-gap: 2rem;
-}
-
-#start-button,
-#restart-button {
-    cursor: pointer;
-    border-radius: 1rem;
-    margin: 2rem auto 1rem;
-    padding: 1rem 3rem;
-    font-size: 2rem;
-    font-weight: 600;
-    color: rgb(255, 255, 255);
-    background-color: rgb(64, 107, 226);
-}
-
-#in-game,
-#end-game {
-    display: none;
-}
-
-#start-game>p {
-    margin: 2rem auto;
-}
-
-#timer {
-    display: none;
-    text-align: left;
-    height: 0.5rem;
-    width: 100%;
-    background-color: rgb(250, 250, 250);
-    overflow: hidden;
-    border-radius: 1rem;
-}
-
-#progress {
-    transition: ease;
-    height: 100%;
-    background-color: rgba(255, 0, 0, 0.5);
-}
-
-#message {
-    font-size: 1.5rem;
-}
+@media (max-width: 768px) {
+    header {
+      padding: 1.5rem;
+    }
+    
+    header h1 {
+      font-size: 2rem;
+    }
+    
+    main {
+      padding: 1rem;
+    }
+    
+    .blog-item {
+      padding: 1.5rem;
+    }
+    
+    .blog-item h2 {
+      font-size: 1.5rem;
+    }
+  }
