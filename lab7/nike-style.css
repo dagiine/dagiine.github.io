@@ -1,8 +1,8 @@
-body, h1, p, a {
+body, h2, h3, p, a {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
 }
 
 a {
@@ -197,61 +197,19 @@ footer {
   gap: 10px;
 }
 
-.footer-section h4 {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: black;
+footer-bottom p {
+  margin: 0.5rem 0;
 }
 
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 8px;
-}
-
-.footer-section ul li a {
+footer-bottom a {
+  color: #ff6f61;
   text-decoration: none;
-  color: #555;
-  font-size: 14px;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
 }
 
-.footer-section ul li a:hover {
-  text-decoration: underline;
-}
-
-.footer-bottom {
-  margin-top: 20px;
-  margin-bottom: 60px;
-  padding-top: 10px;
-  justify-content: space-between;
-}
-
-.footer-bottom p {
-  margin: 0;
-  font-size: 14px;
-  color: #555;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0;
-  display: flex;
-  gap: 15px;
-}
-
-.footer-links li a {
-  text-decoration: none;
-  color: #555;
-  font-size: 14px;
-}
-
-.footer-links li a:hover {
-  text-decoration: underline;
+footer-bottom a:hover {
+  color: #ff4a3a;
 }
 
 .product-highlight {
@@ -352,7 +310,7 @@ footer {
   margin-bottom: 5px;
 }
 
-.title h1 {
+.title h2 {
   font-size: 40px;
   font-weight: 900;
   margin-bottom: 5px;
