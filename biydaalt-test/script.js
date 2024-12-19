@@ -57,13 +57,17 @@ sizeInput.addEventListener('input', (e) => {
 
 // Resize canvas to match image size
 function resizeCanvas() {
-    canvas.width = image.width;
-    canvas.height = image.height;
-    redrawImage(); // Redraw the image every time the canvas is resized
+    // Ensure the canvas size is valid and not 0x0
+    if (image.complete) {
+        canvas.width = image.width;
+        canvas.height = image.height;
+        redrawImage(); // Redraw the image every time the canvas is resized
+    }
 }
 
 // Redraw the image on the canvas so it remains visible while drawing
 function redrawImage() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear before redrawing
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 }
 
@@ -102,7 +106,7 @@ function draw(event) {
 
     ctx.beginPath();
     ctx.moveTo(x, y);
-    ctx.lineTo(x + 1, y + 1);
+    ctx.lineTo(x + 5, y + 5); // Increase the line length to make it visible
     ctx.stroke();
 }
 
