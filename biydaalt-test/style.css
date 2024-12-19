@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    color: #333;
+    text-align: center;
+}
+
+header img {
+    width: 100%;
+    height: auto;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+#size-input {
+    width: 200px;
+}
+
+.color-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.color-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.color-btn:hover {
+    transform: scale(1.2);
+}
+
+.image-options button,
+#clear-canvas {
+    margin: 5px;
+    padding: 15px;
+    font-size: 16px;
+    background-color: #57a0d3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.image-options button:hover, 
+#clear-canvas:hover  {
+    background-color: #0147ab;
+}
+
+.coloring-canvas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 50%;
+}
+
+.canvas-container {
+    position: relative;
+}
+
+#image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: 5px solid #74b7e2;
+    z-index: 100;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+    cursor: crosshair;
+    z-index: 0;
+}
+
+footer {
+    background-color: #4683b1;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 1000;
+}
+
+.snowflake {
+    position: absolute;
+    top: -50px;
+    animation: fall linear infinite;
+}
+
+.snowflake img {
+    width: 20px;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px);
+        left: var(--start-pos);
+    }
+    100% {
+        transform: translateY(110vh);
+        left: var(--end-pos);
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .coloring-canvas {
+        width: 100%;
+    }
+
+    .options {
+        margin-right: 0;
+    }
+}

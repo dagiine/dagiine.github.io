@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <title>Coloring Book</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="snow-container"></div>
+
+    <header>
+        <img src="decoration.png" alt="X-mas decoration">
+    </header>
+
+    <main>
+        <section class="options">
+            <article class="size">
+                <label for="size-input">Бийрний хэмжээ:</label>
+                <input type="range" min="5" max="100" value="5" id="size-input">
+            </article>
+
+            <article class="color-buttons">
+                <button class="color-btn" style="background-color: #008000;" id="green"></button> 
+                <button class="color-btn" style="background-color: #8B4513;" id="brown"></button> 
+                <button class="color-btn" style="background-color: #FFFF00;" id="yellow"></button>
+                <button class="color-btn" style="background-color: #FF0000;" id="red"></button> 
+                <button class="color-btn" style="background-color: #0800ff;" id="blue"></button> 
+                <button class="color-btn" style="background-color: #D2B48C;" id="brownish-yellow"></button>
+                <button class="color-btn" style="background-color: #FFC0CB;" id="pink"></button> 
+                <button class="color-btn" style="background-color: #00FFFF;" id="cyan"></button>
+            </article>
+
+            <aside class="image-options">
+                <button id="xmas-tree">Гацуур</button>
+                <button id="reindeer">Буга</button>
+                <button id="gingerbread-man">Gingerbread Man</button>
+                <button id="clear-canvas">🧹</button>
+            </aside>
+        </section>
+
+        <section class="coloring-canvas">
+            <article class="canvas-container">
+                <img id="image" src="xmas-tree.png" alt="Christmas Tree">
+                <canvas id="canvas"></canvas>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>Шинэ жилийн мэнд хүргэе 🎄❄️</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="snowfall.js"></script>
+</body>
+</html>
