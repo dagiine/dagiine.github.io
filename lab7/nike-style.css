@@ -45,7 +45,7 @@ a {
 .nav-links {
   display: flex;
   justify-content: center;
-  flex: 1; 
+  flex: 1;
 }
 
 .nav-links a {
@@ -71,18 +71,6 @@ a {
 .utility-icons img {
   height: 20px;
   width: auto;
-}
-
-.banner {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.banner img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 .carousel-section img {
@@ -366,7 +354,7 @@ footer {
 
 .title h1 {
   font-size: 40px;
-  font-weight:900;
+  font-weight: 900;
   margin-bottom: 5px;
 }
 
@@ -383,4 +371,115 @@ footer {
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+  .main-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+  }
+
+  .product-highlight {
+    flex-direction: column;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-header {
+    flex-direction: column;
+    font-size: 10px;
+  }
+
+  .left-icons img {
+    margin-left: 10px;
+    height: 15px;
+  }
+
+  .main-header {
+    padding: 10px;
+  }
+
+  .logo {
+    height: 50px;
+    margin-left: 20px;
+  }
+
+  .nav-links a {
+    margin: 10px;
+    font-size: 14px;
+  }
+
+  .carousel-slide p {
+    margin: 20px;
+    font-size: 14px;
+  }
+
+  .footer-section h4 {
+    font-size: 12px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+  }
+
+  .product-card {
+    padding: 10px;
+  }
+
+  .card-content h2 {
+    font-size: 20px;
+  }
+
+  .card-content p {
+    font-size: 12px;
+  }
+
+  .menu-con .top-menu li a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    max-width: 100px;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .carousel-section img {
+    margin-top: 30px;
+  }
+
+  .multi-column-menu {
+    flex-direction: column;
+  }
+
+  .menu-column {
+    width: 100%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links {
+    flex-direction: column;
+  }
 }
