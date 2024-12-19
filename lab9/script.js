@@ -26,27 +26,31 @@ function startGame() {
 }
 
 function updateWordDisplay() {
-  wordDisplay.textContent = chosenWord
-    .split("")
-    .map(letter => (guessedLetters.includes(letter) ? letter : "_ "))
-    .join(" ");
-}
-
+    let displayedWord = "";
+    for (let i = 0; i < chosenWord.length; i++) {
+      const letter = chosenWord[i];
+      displayedWord += guessedLetters.includes(letter.toLowerCase()) ? letter + " " : "_ ";
+    }
+    wordDisplay.textContent = displayedWord.trim();
+  }
+  
 function createLetterButtons() {
-  const mongolianAlphabet = "АБВГДЕЁЖЗИИЙЛМНОӨПРСТУҮФХЦЧШЩЪЫЬЭЮЯ".split("");
+  const alphabet = "АБВГДЕЁЖЗИИЙЛМНОӨПРСТУҮФХЦЧШЩЪЫЬЭЮЯ".split("");
 
-  mongolianAlphabet.forEach(letter => {
+  for (let i = 0; i < alphabet.length; i++) {
+    const letter = alphabet[i];
     const button = document.createElement("button");
     button.textContent = letter;
     button.onclick = () => handleGuess(letter, button);
     keyboardContainer.appendChild(button);
-  });
+  }
 }
 
 function handleGuess(letter, button) {
   letter = letter.toLowerCase();
 
-  if (guessedLetters.includes(letter)) return;
+  if (guessedLetters.includes(letter)) 
+    return;
 
   guessedLetters.push(letter);
   button.disabled = true;
@@ -54,15 +58,17 @@ function handleGuess(letter, button) {
   if (chosenWord.toLowerCase().includes(letter)) {
     button.classList.add("correct");
     updateWordDisplay();
-    if (chosenWord.split("").every(char => guessedLetters.includes(char.toLowerCase()))) {
-      wordDisplay.textContent = "Баяр хүргэе! Нуусан үгийг зөв таалаа. 🎉";
+    if (isWordComplete()) {
+      wordDisplay.textContent = "Баяр хүргэе! Нуусан үгийг зөв таалаа. ";
+      disableKeyboard();
     }
   } else {
     button.classList.add("wrong");
     wrongGuesses++;
     updateHangmanImage();
     if (wrongGuesses === 6) {
-      wordDisplay.textContent = `Тоглоом дууслаа! 😢 Нуусан үг: ${chosenWord}`;
+      wordDisplay.textContent = `Тоглоом дууслаа! Нуусан үг: ${chosenWord}`;
+      disableKeyboard(); 
     }
   }
 }
@@ -74,7 +80,24 @@ function updateHangmanImage() {
 }
 
 function resetManImages() {
-  manImages.forEach(image => (image.style.visibility = "hidden"));
+  for (let i = 0; i < manImages.length; i++) {
+    manImages[i].style.visibility = "hidden";
+  }
+}
+
+function isWordComplete() {
+  for (let i = 0; i < chosenWord.length; i++) {
+    const letter = chosenWord[i];
+    if (!guessedLetters.includes(letter.toLowerCase())) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function disableKeyboard() {
+  const buttons = document.querySelectorAll("#keyboard button");
+  buttons.forEach(button => button.disabled = true);
 }
 
 startGame();
