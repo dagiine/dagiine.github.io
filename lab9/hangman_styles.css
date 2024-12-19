@@ -7,7 +7,7 @@ body {
   background-position: center;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
