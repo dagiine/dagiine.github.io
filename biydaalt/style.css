@@ -1,79 +1,73 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-#calc {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: right;
-    align-items: start;
-}
-#content {
-    background: black;
-    padding: 20px;
-    border-radius: 10px;
-
-}
-#content form input {
-    border: 0;
-    outline: 0;
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    font-size: 15px;
-    margin: 10px;
-    cursor: pointer;
-}
-#backspace {
-    background-color: orange;
-    color: white;
-}
-#res {
-    padding: 10px;
-}
-#clear {
-    background-color: orange;
-    color: white;
-}
-form #output {
-    display: flex;
-    justify-content: flex-end;
-    margin: 15px 0;
-}
-form #output input {
-    text-align: right;
-    flex: 1;
-    font-size: 25px;
+body {
+  background-color: rgb(255, 228, 196);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
-
-.container {
-  margin: auto;
-  width: 400px;
+.game-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
 }
 
-.path--background {
-  fill: rgb(34, 213, 201);
-  stroke: #fff;
-  stroke-width: 0px;
+#startButton {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.pulse {
-  fill: rgb(255, 74, 74) !important;
+#endButton {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.path--foreground {
-  fill: #eee;
-  stroke: #eee;
-  stroke-width: 2px;
+.game-container {
+  background-color: rgb(1, 254, 64);
+  display: grid;
+  grid-template-columns: repeat(3, 160px);
+  gap: 10px;
+  border: 2px solid rgb(216, 216, 216);
+  padding: 20px;
+  border-radius: 10px;
+
 }
 
-.label {
-  font: 90px "Open Sans";
-  font-weight: 900;
-  text-anchor: middle;
-  fill: rgb(34, 213, 201);
+.hole {
+  height: 150px;
+  background: rgb(19, 55, 139);
+  border: 5px solid rgb(30, 30, 30);
+  cursor: pointer;
+  border-radius: 100px;
+}
+
+.mole {
+  background-size: 150px;
+  background-image: url("mole.png");
+}
+
+@media only screen and (max-width: 600px) {
+  .game-container {
+      width: 80%;
+      gap: 10px;
+      padding: 5%;
+      grid-template-columns: repeat(3, 38%);
+  }
+
+  .hole {
+      height: 50px;
+      width: 50px;
+      border-radius: 100px;
+  }
+
+  .mole {
+      background-size: 50px;
+      background-image: url("mole.png");
+  }
 }
