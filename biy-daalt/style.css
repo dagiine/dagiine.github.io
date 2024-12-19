@@ -91,7 +91,7 @@ main {
     max-width: 100%;
     height: auto;
     display: block;
-    border: 5px solid #74b7e2;
+    border: 5px solid green;
     z-index: 100;
 }
 
@@ -104,6 +104,11 @@ main {
     pointer-events: auto;
     cursor: crosshair;
     z-index: 0;
+}
+
+article img {
+    width: 400px;
+    height: auto;
 }
 
 footer {

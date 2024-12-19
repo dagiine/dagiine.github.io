@@ -1,60 +1,88 @@
-async function fetchRSS() {
-  try {
-    const response = await fetch('rss.xml');
-    if (!response.ok) {
-      console.error(`Response status: ${response.status}`);
-      showErrorMessage();
-      return;
-    }
-    const xmlText = await response.text();
-    const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(xmlText, "text/xml");
+let newsItems = [];
 
-    if (xmlDoc.querySelector('parsererror')) {
-      console.error('XML уншихад алдаа гарлаа.');
-      showErrorMessage();
-      return;
-    }
+function fetchNews() {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "rss.xml", true);
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xhr.responseText, "text/xml");
+            const items = xmlDoc.getElementsByTagName("item");
 
-    displayBlogPosts(xmlDoc);
-  } catch (error) {
-    console.error("Алдаа гарлаа:", error);
-    showErrorMessage();
-  }
+            if (items.length > 0) {
+                const newsList = document.getElementById("news-list");
+                newsList.innerHTML = "";
+
+                newsItems = Array.from(items).slice(0, 12).map((item, index) => {
+                    const title = item.getElementsByTagName("title")[0]?.textContent || "No Title";
+                    const link = item.getElementsByTagName("link")[0]?.textContent || "#";
+                    const description = item.getElementsByTagName("description")[0]?.textContent || "No Details";
+
+                    const imageMatch = description.match(/<img[^>]+src="([^">]+)"/);
+                    const imageUrl = imageMatch ? imageMatch[1] : 'https://via.placeholder.com/300x200?text=News';
+
+                    const newsItem = document.createElement("div");
+                    newsItem.classList.add("news-card");
+                    newsItem.dataset.index = index;
+                    newsItem.innerHTML = `
+                        <img src="${imageUrl}" alt="${title}" class="news-card-image" onerror="this.src='https://via.placeholder.com/300x200?text=News'">
+                        <div class="news-card-content">
+                            <h2 class="news-card-title">${title}</h2>
+                            <p class="news-card-description">${description.replace(/<[^>]*>/g, '')}</p>
+                        </div>
+                    `;
+
+                    newsItem.addEventListener('click', () => showSingleNews(index));
+
+                    newsList.appendChild(newsItem);
+
+                    return {
+                        title,
+                        link,
+                        description,
+                        imageUrl
+                    };
+                });
+            } else {
+                document.getElementById("news-list").innerHTML = '<div class="error">No news found!</div>';
+            }
+        } else {
+            console.error("Error fetching RSS.");
+            document.getElementById("news-list").innerHTML = '<div class="error">Error loading news.</div>';
+        }
+    };
+    xhr.onerror = function () {
+        console.error("Request failed.");
+        document.getElementById("news-list").innerHTML = '<div class="error">Network error occurred.</div>';
+    };
+    xhr.send();
 }
 
-function showErrorMessage() {
-  const blogList = document.getElementById("blog-list");
-  if (blogList) {
-    blogList.innerHTML = '<p>RSS мэдээлэл ачаалахад алдаа гарлаа.</p>';
-  }
-}
+function showSingleNews(index) {
+    const news = newsItems[index];
+    const singleNewsContainer = document.getElementById("single-news");
+    const newsListContainer = document.getElementById("news-list");
 
-function displayBlogPosts(xmlDoc) {
-  const blogList = document.getElementById("blog-list");
-  if (!blogList) {
-    console.error("blog-list элемент олдсонгүй.");
-    return;
-  }
-
-  const items = xmlDoc.getElementsByTagName("item");
-  blogList.innerHTML = '';
-
-  for (let i = 0; i < items.length && i < 10; i++) {
-    const item = items[i];
-    const title = item.querySelector("title")?.textContent || "Гарчиггүй";
-    const description = item.querySelector("description")?.textContent || "";
-    const pubDate = item.querySelector("pubDate")?.textContent || "";
-
-    const article = document.createElement("div");
-    article.innerHTML = `
-      <h2>${title}</h2>
-      <p>${description.substring(0, 200)}...</p>
-      <small>${pubDate}</small>
+    singleNewsContainer.innerHTML = `
+        <a href="#" class="back-button" onclick="showNewsList(); return false;">◀ Back</a>
+        <img src="${news.imageUrl}" alt="${news.title}" class="single-news-image" onerror="this.src='https://via.placeholder.com/1200x600?text=News'">
+        <h1 class="single-news-title">${news.title}</h1>
+        <div class="single-news-content">
+            ${news.description.replace(/<[^>]*>/g, '')}
+            <p><br><a href="${news.link}" target="_blank">Go to source</a></p>
+        </div>
     `;
 
-    blogList.appendChild(article);
-  }
+    newsListContainer.style.display = 'none';
+    singleNewsContainer.style.display = 'block';
 }
 
-fetchRSS();  
+function showNewsList() {
+    const singleNewsContainer = document.getElementById("single-news");
+    const newsListContainer = document.getElementById("news-list");
+
+    newsListContainer.style.display = 'grid';
+    singleNewsContainer.style.display = 'none';
+}
+
+fetchNews();

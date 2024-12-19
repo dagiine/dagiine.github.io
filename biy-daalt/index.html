@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Coloring Book</title>
+    <title>Christmas Coloring Book</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,23 +29,23 @@
             </article>
 
             <aside class="image-options">
-                <button onClick="changeImage(`xmas-tree.png`)" id="xmas-tree" >Гацуур</button>
-                <button onClick="changeImage(`reindeer.png`)">Буга</button>
-                <button onClick="changeImage(`gingerbread-man.png`)">Gingerbread Man</button>
+                <button onClick="changeImage('xmas-tree.png')" id="xmas-tree">Гацуур</button>
+                <button onClick="changeImage('reindeer.png')" id="reindeer">Буга</button>
+                <button onClick="changeImage('gingerbread-man.png')" id="gingerbread">Gingerbread Man</button>
                 <button id="clear-canvas">🧹</button>
             </aside>
         </section>
 
         <section class="coloring-canvas">
             <article class="canvas-container">
-                <img id="image" src="xmas-tree.png" alt="Christmas Tree">
+                <img id="image" src="book-cover.jpg" alt="Coloring Book Cover">
                 <canvas id="canvas"></canvas>
             </article>
         </section>
     </main>
 
     <footer>
-        <p>Шинэ жилийн мэнд хүргэе 🎄❄️</p>
+        <p>&copy Шинэ жилийн мэнд хүргэе 🎄❄️</p>
     </footer>
 
     <script src="script.js"></script>

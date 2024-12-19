@@ -1,38 +1,20 @@
 <!DOCTYPE html>
+<html lang="mn">
 <head>
-    <title>Lab 10</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мэдээний сайт</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <section>
-            <img src="ikon.png" alt="Ikon Logo">
-        </section>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#">ЭХЛЭЛ</a></li>
-            <li><a href="#">ИТХ 2024 - ДҮН</a></li>
-            <li><a href="#">УЛС ТӨР</a></li>
-            <li><a href="#">ЭДИЙН ЗАСАГ</a></li>
-            <li><a href="#">НИЙГЭМ</a></li>
-            <li><a href="#">ЭРҮҮЛ МЭНД</a></li>
-            <li><a href="#">ДЭЛХИЙ</a></li>
-            <li><a href="#">LIVE</a></li>
-            <li><a href="#">ШИЛДЭГ</a></li>
-            <li><a href="#">БУСАД</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section id="blog-list"></section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Ikon</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <div class="container">
+        <div class="header">
+            <h1>Өнөөдрийн мэдээ</h1>
+        </div>
+        <div id="news-list" class="loading">Мэдээнүүд ачааллаж байна...</div>
+        <div id="single-news"></div>
+    </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
