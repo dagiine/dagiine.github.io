@@ -18,8 +18,9 @@ header img {
 
 main {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center; 
+    align-items: center;    
+    height: 100vh;         
     padding: 20px;
 }
 
@@ -30,6 +31,7 @@ main {
     margin-right: 20px;
     margin-bottom: 20px;
     flex: 1;
+    min-height: 60%;      
 }
 
 #size-input {
@@ -44,11 +46,11 @@ main {
 }
 
 .color-btn {
-    width: 40px;
-    height: 40px;
+    width: 50px;            
+    height: 50px;          
     border: none;
     border-radius: 50%;
-    margin: 5px;
+    margin: 10px;           
     cursor: pointer;
     transition: transform 0.2s ease;
 }
@@ -59,9 +61,9 @@ main {
 
 .image-options button,
 #clear-canvas {
-    margin: 5px;
-    padding: 15px;
-    font-size: 16px;
+    margin: 10px;          
+    padding: 20px;        
+    font-size: 18px;     
     background-color: #57a0d3;
     color: #fff;
     border: none;
