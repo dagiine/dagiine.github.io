@@ -16,9 +16,11 @@ const yellowButton = document.getElementById('yellow');
 const redButton = document.getElementById('red');
 const blueButton = document.getElementById('blue');
 const brownishYellowButton = document.getElementById('brownish-yellow');
+const pinkButton = document.getElementById('pink');
+const cyanButton = document.getElementById('cyan');
 
 let isDrawing = false;
-let currentColor = colorInput.value;
+let currentColor = '#008000'; // Default color is green
 let brushSize = sizeInput.value;
 
 // Set initial drawing settings
@@ -51,6 +53,15 @@ brownishYellowButton.addEventListener('click', () => {
     currentColor = '#D2B48C'; // Brownish Yellow
 });
 
+pinkButton.addEventListener('click', () => {
+    currentColor = '#FFC0CB'; // Pink
+});
+
+cyanButton.addEventListener('click', () => {
+    currentColor = '#00FFFF'; // Cyan
+});
+
+// Brush size handler
 sizeInput.addEventListener('input', (e) => {
     brushSize = e.target.value;
 });
