@@ -1,64 +1,76 @@
-words = ["туулай", "мэлхий", "ямаа", "үнэг", "баавгай", "арслан", "анааш", "тэмээ", "муур", "морь"];
-let word = words[Math.floor(Math.random() * words.length)];
-let guessedWord = Array(word.length).fill("_");
+const words = ["туулай", "мэлхий", "ямаа", "үнэг", "баавгай", "арслан", "анааш", "тэмээ", "муур", "морь"];
+
+let chosenWord = "";
+let guessedLetters = [];
 let wrongGuesses = 0;
+const maxWrongGuesses = 6;
 
-const wordDisplay = document.getElementById("word");
-const keyboard = document.getElementById("keyboard");
+const hangmanImages = [
+  "man_1.png",
+  "man_2.png",
+  "man_3.png",
+  "man_4.png",
+  "man_5.png",
+  "man_6.png",
+];
 
-function updateWordDisplay() {
-  wordDisplay.textContent = guessedWord.join(" ");
-}
+const hangmanImage = document.getElementById("hangmanImage");
+const wordDisplay = document.getElementById("wordDisplay");
+const message = document.getElementById("message");
+const lettersContainer = document.getElementById("letters");
 
-function handleGuess(letter) {
-  const button = document.getElementById(letter);
-  if (button.disabled) 
-    return;
-
-  button.disabled = true;
-  let correctGuess = false;
-
-  for (let i = 0; i < word.length; i++) {
-    if (word[i].toLowerCase() === letter.toLowerCase()) {  
-      guessedWord[i] = word[i];
-      correctGuess = true;
-    }
-  }
+function startGame() {
+  chosenWord = words[Math.floor(Math.random() * words.length)];
+  guessedLetters = [];
+  wrongGuesses = 0;
 
   updateWordDisplay();
-
-  if (correctGuess) {
-    button.classList.add("correct");
-    if (!guessedWord.includes("_")) {
-      setTimeout(() => {
-        alert("Баяр хүргэе! Нуусан үгийг зөв таалаа. 🎉");
-      }, 500);
-    }
-  } else {
-    wrongGuesses++;
-    const manImage = document.getElementById(`man_${wrongGuesses}`);
-    if (manImage) 
-      manImage.style.visibility = 'visible';
-
-    button.classList.add("wrong");
-
-    if (wrongGuesses === 6) {
-      setTimeout(() => {
-        alert(`Тоглоом дууслаа! Нуусан үг "${word}" байлаа. 😢`);
-      }, 500);
-    }
-  }
+  createLetterButtons();
+  updateHangmanImage();
+  message.textContent = "";
 }
 
-function createKeyboard() {
+function updateWordDisplay() {
+  wordDisplay.textContent = chosenWord
+    .split("")
+    .map(letter => (guessedLetters.includes(letter) ? letter : "_"))
+    .join(" ");
+}
+
+function createLetterButtons() {
+  lettersContainer.innerHTML = "";
   "АБВГДЕЁЖЗИЙКЛМНОӨПРСТУҮФХЦЧШЩЪЫЬЭЮЯ".split("").forEach(letter => {
     const button = document.createElement("button");
     button.textContent = letter;
-    button.id = letter; 
-    button.onclick = () => handleGuess(letter);  
-    keyboard.appendChild(button);
+    button.onclick = () => handleGuess(letter, button);
+    lettersContainer.appendChild(button);
   });
 }
 
-updateWordDisplay();
-createKeyboard();
+function handleGuess(letter, button) {
+  if (guessedLetters.includes(letter)) return;
+
+  guessedLetters.push(letter);
+  button.disabled = true;
+
+  if (chosenWord.includes(letter)) {
+    button.classList.add("correct");
+    updateWordDisplay();
+    if (chosenWord.split("").every(char => guessedLetters.includes(char))) {
+      message.textContent = "Баяр хүргэе! Нуусан үгийг зөв таалаа. 🎉";
+    }
+  } else {
+    button.classList.add("wrong");
+    wrongGuesses++;
+    updateHangmanImage();
+    if (wrongGuesses === maxWrongGuesses) {
+      message.textContent = `Тоглоом дууслаа! Нуусан үг "${word}" байлаа. 😢`;
+    }
+  }
+}
+
+function updateHangmanImage() {
+  hangmanImage.src = hangmanImages[wrongGuesses];
+}
+
+startGame();
