@@ -77,14 +77,13 @@ function displayBlogPosts(xmlDoc) {
     blogItem.className = "blog-item";
 
     blogItem.innerHTML = `
-      <h2 class="blog-title">
-        <a href="${detailsLink}" class="blog-link">
+      <a href="${detailsLink}" class="blog-link">
+        <h2 class="blog-title">
           ${sanitizeHTML(title)}
-        </a>
-      </h2>
-      <div class="blog-date">${pubDate ? formatDate(pubDate) : ''}</div>
-      <div class="blog-summary">${sanitizeHTML(summary)}</div>
-      <a href="${detailsLink}" class="read-more">Дэлгэрэнгүй</a>
+        </h2>
+        <div class="blog-date">${pubDate ? formatDate(pubDate) : ''}</div>
+        <div class="blog-summary">${sanitizeHTML(summary)}</div>
+      </a>
     `;
 
     blogList.appendChild(blogItem);
