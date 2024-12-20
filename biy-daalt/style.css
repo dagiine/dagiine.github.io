@@ -1,11 +1,9 @@
-/* Resetting styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styles */
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: white;
@@ -13,13 +11,11 @@ body {
     text-align: center;
 }
 
-/* Header styles */
 header img {
     width: 100%;
     height: auto;
 }
 
-/* Main section styles */
 main {
     display: flex;
     justify-content: center;
@@ -28,7 +24,6 @@ main {
     padding: 20px;
 }
 
-/* Options section styles */
 .options {
     display: flex;
     flex-direction: column;
@@ -43,7 +38,6 @@ main {
     width: 200px;
 }
 
-/* Color buttons styles */
 .color-buttons {
     display: flex;
     justify-content: center;
@@ -65,7 +59,6 @@ main {
     transform: scale(1.2);
 }
 
-/* Image options and clear-canvas button styles */
 .image-options button, 
 #clear-canvas {
     font-size: 18px;
@@ -93,7 +86,6 @@ main {
     margin-right: 5px;
 }
 
-/* Coloring canvas styles */
 .coloring-canvas {
     display: flex;
     flex-direction: column;
@@ -125,13 +117,11 @@ main {
     z-index: 0;
 }
 
-/* Article images */
 article img {
     width: 400px;
     height: auto;
 }
 
-/* Footer styles */
 footer {
     background-color: #4683b1;
     color: #fff;
@@ -141,7 +131,6 @@ footer {
     margin-top: 20px;
 }
 
-/* Snowfall animation */
 .snow-container {
     position: fixed;
     top: 0;
@@ -174,7 +163,6 @@ footer {
     }
 }
 
-/* Responsive styles for smaller screens */
 @media (max-width: 768px) {
     main {
         flex-direction: column;
