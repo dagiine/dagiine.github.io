@@ -1,29 +1,34 @@
+/* Resetting styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: white;
     color: #333;
     text-align: center;
 }
 
+/* Header styles */
 header img {
     width: 100%;
     height: auto;
 }
 
+/* Main section styles */
 main {
     display: flex;
-    justify-content: center; 
-    align-items: center;    
-    height: 100vh;         
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     padding: 20px;
 }
 
+/* Options section styles */
 .options {
     display: flex;
     flex-direction: column;
@@ -31,13 +36,14 @@ main {
     margin-right: 20px;
     margin-bottom: 20px;
     flex: 1;
-    min-height: 60%;      
+    min-height: 60%;
 }
 
 #size-input {
     width: 200px;
 }
 
+/* Color buttons styles */
 .color-buttons {
     display: flex;
     justify-content: center;
@@ -46,11 +52,11 @@ main {
 }
 
 .color-btn {
-    width: 50px;            
-    height: 50px;          
+    width: 50px;
+    height: 50px;
     border: none;
     border-radius: 50%;
-    margin: 10px;           
+    margin: 10px;
     cursor: pointer;
     transition: transform 0.2s ease;
 }
@@ -59,24 +65,35 @@ main {
     transform: scale(1.2);
 }
 
-.image-options button,
+/* Image options and clear-canvas button styles */
+.image-options button, 
 #clear-canvas {
-    margin: 10px;          
-    padding: 20px;        
-    font-size: 18px;     
-    background-color: #57a0d3;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 10px 0;
     color: #fff;
+    background-color: #4683b1;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .image-options button:hover, 
-#clear-canvas:hover  {
+#clear-canvas:hover {
     background-color: #0147ab;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
+.image-options button i, 
+#clear-canvas i {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+/* Coloring canvas styles */
 .coloring-canvas {
     display: flex;
     flex-direction: column;
@@ -108,11 +125,13 @@ main {
     z-index: 0;
 }
 
+/* Article images */
 article img {
     width: 400px;
     height: auto;
 }
 
+/* Footer styles */
 footer {
     background-color: #4683b1;
     color: #fff;
@@ -122,13 +141,14 @@ footer {
     margin-top: 20px;
 }
 
+/* Snowfall animation */
 .snow-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; 
+    pointer-events: none;
     z-index: 1000;
 }
 
@@ -154,6 +174,7 @@ footer {
     }
 }
 
+/* Responsive styles for smaller screens */
 @media (max-width: 768px) {
     main {
         flex-direction: column;
